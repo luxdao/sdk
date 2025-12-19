@@ -1,7 +1,7 @@
 {
-  "name": "decent-sdk",
-  "version": "0.1.9",
-  "description": "SDK for the Decent API",
+  "name": "@luxdao/sdk",
+  "version": "1.0.0",
+  "description": "SDK for the Lux DAO API",
   "main": "./dist/cjs/core/index.js",
   "module": "./dist/esm/core/index.js",
   "files": [
@@ -16,7 +16,7 @@
     "typecheck": "tsc --noEmit",
     "prepublishOnly": "npm run build"
   },
-  "author": "DecentDAO",
+  "author": "Lux Partners Limited",
   "devDependencies": {
     "@eslint/js": "^9.24.0",
     "@stylistic/eslint-plugin": "^4.2.0",
@@ -70,12 +70,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/decentdao/decent-sdk.git"
+    "url": "git+https://github.com/luxdao/sdk.git"
   },
-  "homepage": "https://decentdao.org",
+  "homepage": "https://lux.vote",
   "license": "MIT",
   "keywords": [
-    "decent",
-    "decentdao"
+    "lux",
+    "luxdao",
+    "dao",
+    "governance"
   ]
 }
