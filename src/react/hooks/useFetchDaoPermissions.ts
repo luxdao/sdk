@@ -4,7 +4,7 @@ import { Address } from '../../core/types/Common';
 import { SupportedChainId } from '../../core/types/Chains';
 import { getDaoPermissions } from '../../core/fetch/dao';
 import { QueryReturn, TanstackQueryOptions } from '../types';
-import { DecentApiContext } from '../contexts/DecentApiContext';
+import { DAOApiContext } from '../contexts/DAOApiContext';
 import { skipToken } from '@tanstack/react-query';
 
 type FetchDaoPermissionsOptions = {
@@ -24,7 +24,7 @@ type FetchDaoPermissionsParams = FetchDaoPermissionsOptions & TanstackQueryOptio
  */
 export const useFetchDaoPermissions = (params: FetchDaoPermissionsParams): QueryReturn<Permissions> => {
   const { chainId, address, enabled } = params;
-  const { apiUrl } = useContext(DecentApiContext);
+  const { apiUrl } = useContext(DAOApiContext);
   const shouldFetch = !!(chainId && address) && enabled;
 
   const { data, error, isLoading } = useQuery({

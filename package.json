@@ -1,7 +1,7 @@
 {
-  "name": "@luxdao/sdk",
-  "version": "1.0.0",
-  "description": "SDK for the Lux DAO API",
+  "name": "sdk",
+  "version": "0.1.9",
+  "description": "SDK for the DAO API",
   "main": "./dist/cjs/core/index.js",
   "module": "./dist/esm/core/index.js",
   "files": [
@@ -16,7 +16,7 @@
     "typecheck": "tsc --noEmit",
     "prepublishOnly": "npm run build"
   },
-  "author": "Lux Partners Limited",
+  "author": "DAODAO",
   "devDependencies": {
     "@eslint/js": "^9.24.0",
     "@stylistic/eslint-plugin": "^4.2.0",
@@ -72,12 +72,10 @@
     "type": "git",
     "url": "git+https://github.com/luxdao/sdk.git"
   },
-  "homepage": "https://lux.vote",
+  "homepage": "https://luxdao.org",
   "license": "MIT",
   "keywords": [
-    "lux",
-    "luxdao",
     "dao",
-    "governance"
+    "luxdao"
   ]
 }

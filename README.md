@@ -1,11 +1,11 @@
-# Decent SDK [WIP]
+# DAO SDK [WIP]
 
-A unified SDK for the Decent API that works in both Node.js and React environments.
+A unified SDK for the DAO API that works in both Node.js and React environments.
 
 ## Installation
 
 ```bash
-npm install decent-sdk
+npm install sdk
 ```
 
 ## Usage
@@ -14,7 +14,7 @@ npm install decent-sdk
 
 ```typescript
 // Import core functions
-import { getDao, getAllDaos } from 'decent-sdk';
+import { getDao, getAllDaos } from 'sdk';
 
 // Use core functions
 const dao = await getDao({
@@ -31,13 +31,13 @@ const baseDaos = await getAllDaos({
 
 ```typescript
 // Import React hooks
-import { DecentApiProvider, useFetchDao, useFetchDaos } from 'decent-sdk/react';
+import { DAOApiProvider, useFetchDao, useFetchDaos } from 'sdk/react';
 
 // Wrap your app with the provider
-<DecentApiProvider>
-// <DecentApiProvider apiUrl={"http://localhost:3005"}> // optional apiUrl prop can be passed here
+<DAOApiProvider>
+// <DAOApiProvider apiUrl={"http://localhost:3005"}> // optional apiUrl prop can be passed here
   <DaoComponent />
-</DecentApiProvider>
+</DAOApiProvider>
 
 function DaoComponent() {
   // Use the hook with parameters
@@ -68,6 +68,6 @@ bun install
 bun run build
 
 # Run tests
-#  requirement: configure decent-offchain locally.
+#  requirement: configure offchain locally.
 bun test
 ```

@@ -2,7 +2,7 @@ import { useContext, useQuery } from './imports';
 import { Health } from '../../core/types/Api';
 import { apiHealth } from '../../core/fetch/meta';
 import { QueryReturn, TanstackQueryOptions } from '../types';
-import { DecentApiContext } from '../contexts/DecentApiContext';
+import { DAOApiContext } from '../contexts/DAOApiContext';
 import { skipToken } from '@tanstack/react-query';
 
 type ApiHealthParams = TanstackQueryOptions;
@@ -13,7 +13,7 @@ type ApiHealthParams = TanstackQueryOptions;
  * @returns {QueryReturn<Health>} Object with { data: Health, loading: boolean, error: Error | null }
  */
 export const useApiHealth = (params: ApiHealthParams): QueryReturn<Health> => {
-  const { apiUrl } = useContext(DecentApiContext);
+  const { apiUrl } = useContext(DAOApiContext);
   const shouldFetch = params.enabled;
   const { data, error, isLoading } = useQuery({
     queryKey: ['health', apiUrl],

@@ -3,7 +3,7 @@ import { Dao } from '../../core/types/Dao';
 import { SupportedChainId } from '../../core/types/Chains';
 import { getAllDaos } from '../../core/fetch/dao';
 import { QueryReturn, TanstackQueryOptions } from '../types';
-import { DecentApiContext } from '../contexts/DecentApiContext';
+import { DAOApiContext } from '../contexts/DAOApiContext';
 import { skipToken } from '@tanstack/react-query';
 
 type FetchDaosOptions = {
@@ -21,7 +21,7 @@ type FetchDaosParams = FetchDaosOptions & TanstackQueryOptions;
  */
 export const useFetchDaos = (params?: FetchDaosParams): QueryReturn<Dao[]> => {
   const { chainId, enabled } = params ?? {};
-  const { apiUrl } = useContext(DecentApiContext);
+  const { apiUrl } = useContext(DAOApiContext);
 
   const shouldFetch = !!chainId && enabled;
 

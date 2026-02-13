@@ -4,7 +4,7 @@ import { Proposal } from '../../core/types/Proposal';
 import { Address } from '../../core/types/Common';
 import { getProposal } from '../../core/fetch/proposal';
 import { QueryReturn, TanstackQueryOptions } from '../types';
-import { DecentApiContext } from '../contexts/DecentApiContext';
+import { DAOApiContext } from '../contexts/DAOApiContext';
 import { skipToken } from '@tanstack/react-query';
 
 type FetchProposalOptions = {
@@ -26,7 +26,7 @@ type FetchProposalParams = FetchProposalOptions & TanstackQueryOptions;
  */
 export const useFetchProposal = (params: FetchProposalParams): QueryReturn<Proposal> => {
   const { chainId, address, slug, enabled } = params;
-  const { apiUrl } = useContext(DecentApiContext);
+  const { apiUrl } = useContext(DAOApiContext);
 
   const shouldFetch = !!(chainId && address && slug) && enabled;
 

@@ -89,7 +89,7 @@ export type YesNoProposal = Proposal & {
 
 /*
 Sample multiple choice proposal
-We want to pay Decent
+We want to pay DAO
 1. $100,  // tx: transfer 100 USDC
 2. $2000,  // TX: transfer 2000 USDC
 3. $800,000  // TX: transfer 800000 USDC

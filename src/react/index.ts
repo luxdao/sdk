@@ -1,8 +1,8 @@
 // Client
 export {
-  DecentApiProvider,
-  DecentApiContext,
-} from './contexts/DecentApiContext';
+  DAOApiProvider,
+  DAOApiContext,
+} from './contexts/DAOApiContext';
 
 // Hooks
 export { useFetchDao } from './hooks/useFetchDao';

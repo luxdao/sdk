@@ -2,7 +2,7 @@ import { useContext, useQuery } from './imports';
 import { SupportedChainId } from '../../core/types/Chains';
 import { apiChains } from '../../core/fetch/meta';
 import { QueryReturn, TanstackQueryOptions } from '../types';
-import { DecentApiContext } from '../contexts/DecentApiContext';
+import { DAOApiContext } from '../contexts/DAOApiContext';
 import { skipToken } from '@tanstack/react-query';
 
 type ApiChainsParams = TanstackQueryOptions;
@@ -13,7 +13,7 @@ type ApiChainsParams = TanstackQueryOptions;
  * @returns {QueryReturn<SupportedChainId[]>} Object with { data: SupportedChainId[], loading: boolean, error: Error | null }
  */
 export const useApiChains = (params: ApiChainsParams): QueryReturn<SupportedChainId[]> => {
-  const { apiUrl } = useContext(DecentApiContext);
+  const { apiUrl } = useContext(DAOApiContext);
   const shouldFetch = params.enabled;
   const { data, error, isLoading } = useQuery({
     queryKey: ['chains', apiUrl],

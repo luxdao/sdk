@@ -4,7 +4,7 @@ import { Comment } from '../../core/types/Discussion';
 import { Address } from '../../core/types/Common';
 import { getAllComments } from '../../core/fetch/comment';
 import { QueryReturn, TanstackQueryOptions } from '../types';
-import { DecentApiContext } from '../contexts/DecentApiContext';
+import { DAOApiContext } from '../contexts/DAOApiContext';
 import { skipToken } from '@tanstack/react-query';
 
 type FetchCommentsOptions = {
@@ -26,7 +26,7 @@ type FetchCommentsParams = FetchCommentsOptions & TanstackQueryOptions;
  */
 export const useFetchComments = (params: FetchCommentsParams): QueryReturn<Comment[]> => {
   const { chainId, address, slug, enabled } = params;
-  const { apiUrl } = useContext(DecentApiContext);
+  const { apiUrl } = useContext(DAOApiContext);
   const shouldFetch = !!(chainId && address && slug) && enabled;
   const { data, error, isLoading } = useQuery({
     queryKey: ['comments', chainId, address, slug, apiUrl],
