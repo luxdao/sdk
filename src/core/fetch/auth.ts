@@ -1,8 +1,5 @@
 import { Logout, Nonce, User } from '../types/Api';
-import {
-  genericFetchAndThrowIfError,
-  SessionIdKeyInLocalStorage,
-} from './common/generic';
+import { genericFetchAndThrowIfError, setSessionId } from './common/generic';
 import { BaseParams, VerifySiweParams } from './common/params';
 import { routes } from './common/routes';
 
@@ -18,7 +15,7 @@ export const getNonce = async (params?: BaseParams): Promise<string> => {
     route: `${routes.auth}/nonce`,
     apiUrl,
   });
-  localStorage.setItem(SessionIdKeyInLocalStorage, response.sessionId);
+  setSessionId(response.sessionId);
   return response.nonce;
 };
 
